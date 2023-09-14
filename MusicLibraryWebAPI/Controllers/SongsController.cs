@@ -29,7 +29,12 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            
+            var song = _context.Songs.Find(id);
+            if (song == null)
+            {
+                return NotFound();
+            }
+            return Ok(song);
         }
 
         // POST api/Songs
