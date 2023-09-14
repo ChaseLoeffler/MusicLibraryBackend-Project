@@ -21,7 +21,8 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            
+            var songs = _context.Songs.ToList();
+            return Ok(songs);
         }
 
         // GET api/Songs/5
