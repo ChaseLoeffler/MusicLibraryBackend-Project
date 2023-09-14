@@ -50,12 +50,14 @@ namespace MusicLibraryWebAPI.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Song song)
         {
+            return Ok(song);
         }
 
         // DELETE api/Songs/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            return Ok(id);
         }
     }
 }
